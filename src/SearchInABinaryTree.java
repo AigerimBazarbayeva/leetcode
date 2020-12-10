@@ -33,13 +33,14 @@ public class SearchInABinaryTree {
             res = node;
         }
 
-        if(node.left != null){
-            traverse(node.left, val);
+        if(node.val < val){
+            if(node.right != null){
+                traverse(node.right, val);
+            }
+        }else{
+            if(node.left != null){
+                traverse(node.left, val);
+            }
         }
-
-        if(node.right != null){
-            traverse(node.right, val);
-        }
-
     }
 }
